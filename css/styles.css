@@ -1,0 +1,32 @@
+.carousel-indicators [data-bs-target] {
+    background-color: green;
+}
+
+.carousel-indicators .active {
+    background-color: darkgreen;
+
+}
+
+.carousel-indicators {
+    bottom: -40px;
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: green;
+
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: 60% 60%;
+
+}
+
+@media (max-width: 768px) {
+
+    #teamCarousel .carousel-control-prev,
+    #teamCarousel .carousel-control-next {
+        display: none;
+    }
+}
