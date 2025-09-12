@@ -10,12 +10,17 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS Library for animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- fullPage.js CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css" />
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="./index.html">CoderHub.run</a>
+                <a class="navbar-brand" href="../index.html">CoderHub.run</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,112 +37,207 @@
         </nav>
     </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="text-white text-center text-lg-start bg-dark mt-5">
-        <div class="container p-4">
-            <div class="row mt-4">
-
-
-                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">Sobre la empresa</h5>
-                    <p>
-                        Somos CoderHub.run, una casa de desarrollo de software que busca
-                        innovar y ofrecer soluciones confiables en el mercado tecnológico.
-                    </p>
-                    <p>
-                        Trabajamos con pasión, compromiso y transparencia para entregar
-                        resultados que generan impacto positivo.
-                    </p>
-
-
-                    <div class="mt-4">
-                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+    <!-- fullPage.js HTML -->
+    <div id="fullpage">
+        <!-- Sección 0: Hero -->
+        <div class="section">
+            <div class="hero-services bg-gradient text-white">
+                <div class="container text-center d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold" data-aos="fade-down">Nuestros Servicios</h1>
+                        <p class="lead" data-aos="fade-up" data-aos-delay="200">Soluciones tecnológicas innovadoras para
+                            impulsar tu negocio</p>
+                        <a href="#section1" class="btn btn-light btn-lg mt-4">Explorar Servicios</a>
                     </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4 pb-1">Contáctanos</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <i class="bi bi-geo-alt-fill me-2"></i> Florencia, Caquetá, Colombia
-                        </li>
-                        <li class="mb-3">
-                            <i class="bi bi-envelope-fill me-2"></i> contacto@coderhub.run
-                        </li>
-                        <li class="mb-3">
-                            <i class="bi bi-telephone-fill me-2"></i> +57 300 123 4567
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">Horario de atención</h5>
-                    <table class="table text-center text-white">
-                        <tbody class="fw-normal">
-                            <tr>
-                                <td>Lun - Jue:</td>
-                                <td>8:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Viernes:</td>
-                                <td>8:00 - 17:00</td>
-                            </tr>
-                            <tr>
-                                <td>Sábado:</td>
-                                <td>9:00 - 13:00</td>
-                            </tr>
-                            <tr>
-                                <td>Domingo:</td>
-                                <td>Cerrado</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
 
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            &copy; 2025 CoderHub.run - Todos los derechos reservados
+        <!-- Sección 1: Desarrollo Web -->
+        <div class="section" id="section1">
+            <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+                <div class="service-content">
+                    <div class="service-image">
+                        <img src="../img/web.jpg" alt="Desarrollo Web" class="img-fluid">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="bi bi-code-slash fs-1 text-primary"></i>
+                        </div>
+                        <h2 class="service-title">Desarrollo Web</h2>
+                        <p class="service-description">
+                            Construcción de sitios web modernos y responsivos con las últimas tecnologías.
+                            Utilizamos frameworks como React, Vue.js y Angular para crear experiencias
+                            de usuario excepcionales.
+                        </p>
+                        <div class="service-details">
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Sitios responsivos</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Optimización SEO</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Integración APIs</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Mantenimiento incluido</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-lg mt-4">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <!-- Sección 2: Apps Móviles -->
+        <div class="section">
+            <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+                <div class="service-content">
+                    <div class="service-image">
+                        <img src="../img/movil.jpg" alt="Apps Móviles" class="img-fluid">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="bi bi-phone-fill fs-1 text-success"></i>
+                        </div>
+                        <h2 class="service-title">Apps Móviles</h2>
+                        <p class="service-description">
+                            Desarrollo de aplicaciones móviles nativas e híbridas para iOS y Android.
+                            Creamos apps intuitivas que conectan con tus usuarios donde sea que estén.
+                        </p>
+                        <div class="service-details">
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>iOS y Android nativo</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Apps híbridas con React Native</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Publicación en stores</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Actualizaciones gratuitas</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-success btn-lg mt-4">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 3: Consultoría -->
+        <div class="section">
+            <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+                <div class="service-content">
+                    <div class="service-image">
+                        <img src="../img/test.jpg" alt="Consultoría" class="img-fluid">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="bi bi-chat-dots fs-1 text-warning"></i>
+                        </div>
+                        <h2 class="service-title">Consultoría Tecnológica</h2>
+                        <p class="service-description">
+                            Asesoría experta en arquitectura de software y mejores prácticas de desarrollo.
+                            Te ayudamos a tomar las mejores decisiones técnicas para tu proyecto.
+                        </p>
+                        <div class="service-details">
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Análisis de arquitectura</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Code review</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Optimización de procesos</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Mentoría técnica</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-warning btn-lg mt-4">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 4: Soporte -->
+        <div class="section">
+            <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+                <div class="service-content">
+                    <div class="service-image">
+                        <img src="../img/Persona1.png" alt="Soporte" class="img-fluid">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="bi bi-headset fs-1 text-danger"></i>
+                        </div>
+                        <h2 class="service-title">Soporte Técnico</h2>
+                        <p class="service-description">
+                            Mantenimiento y soporte técnico continuo para tus proyectos digitales.
+                            Estamos aquí para asegurar que tu software siempre funcione perfectamente.
+                        </p>
+                        <div class="service-details">
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Monitoreo 24/7</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Soporte prioritario</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Actualizaciones de seguridad</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Backup automático</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-danger btn-lg mt-4">Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 5: Contacto/CTA -->
+        <div class="section">
+            <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+                <div class="additional-content text-center">
+                    <h2 class="mb-4">¿Listo para transformar tu idea en realidad?</h2>
+                    <p class="lead mb-4">Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus objetivos
+                        tecnológicos.</p>
+                    <a href="../html/contact.html" class="btn btn-light btn-lg">Iniciar Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="../js/scripts.js"></script>
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- fullPage.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
+    <!-- Scripts personalizados -->
+    <script src="../js/scripts.js"></script>
 
 
 </body>
