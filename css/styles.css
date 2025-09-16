@@ -61,7 +61,7 @@ header.scrolled .navbar {
     bottom: 8px;
     width: 5px;
     border-radius: 4px;
-    background: linear-gradient(180deg, #1db954, #007BFF);
+    background: linear-gradient(180deg, #d6d30e, #0314b4);
 }
 
 @media (max-width: 991px) {

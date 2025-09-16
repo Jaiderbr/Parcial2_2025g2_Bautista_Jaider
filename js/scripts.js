@@ -117,7 +117,6 @@
                     setTimeout(removeWatermark, 1500);
                     setTimeout(removeWatermark, 3000);
 
-                    // Animate visible elements immediately (first section on mobile)
                     if (typeof AOS !== 'undefined') {
                         animateVisibleAOS();
                         AOS.refreshHard && AOS.refreshHard();
@@ -166,19 +165,16 @@
             });
         }
 
-        // Helper: mark currently visible [data-aos] as animated
         function animateVisibleAOS() {
             const els = document.querySelectorAll('[data-aos]');
             const vh = window.innerHeight || document.documentElement.clientHeight;
             els.forEach(el => {
                 const rect = el.getBoundingClientRect();
-                // If at least 20% of the element is visible
                 const visible = rect.top < vh * 0.9 && rect.bottom > vh * 0.1;
                 if (visible) el.classList.add('aos-animate');
             });
         }
 
-        // Run after DOM ready
         animateVisibleAOS();
         window.addEventListener('resize', () => {
             animateVisibleAOS();
@@ -250,6 +246,29 @@
             }
         } catch (err) {
             console.warn('Carousel animation hooks not available', err);
+        }
+
+        try {
+            const isContactPage = /contact\.html?$/.test(window.location.pathname);
+            if (isContactPage) {
+                const contactForm = document.querySelector('form.needs-validation');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function (e) {
+                        if (!contactForm.checkValidity()) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            contactForm.classList.add('was-validated');
+                            return;
+                        }
+                        e.preventDefault();
+                        alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
+                        contactForm.reset();
+                        contactForm.classList.remove('was-validated');
+                    });
+                }
+            }
+        } catch (err) {
+            console.warn('Contact form handler not attached', err);
         }
     });
 })()

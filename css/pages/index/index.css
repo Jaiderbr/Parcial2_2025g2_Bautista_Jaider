@@ -66,6 +66,7 @@ body {
     border-radius: 8px;
     opacity: 0;
     animation: slideInRight 0.8s ease-out forwards 0.4s;
+    will-change: transform, opacity;
 }
 
 .hero-panel .col-md-5 {
@@ -234,7 +235,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
+    min-height: 50px;
     padding: 0.6rem 1.15rem;
     border-radius: 40px;
     box-sizing: border-box;
@@ -263,6 +264,23 @@ body {
     }
 }
 
+@keyframes heroFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .hero-panel .img-fluid:hover {
+        transform: translateY(-6px) rotateZ(-0.5deg);
+        transition: transform 0.25s ease;
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -284,5 +302,48 @@ body {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.hero-panel .img-fluid {
+    animation: slideInRight 0.8s ease-out forwards 0.4s;
+}
+
+.hero-image-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    border-radius: 0;
+}
+
+.hero-image-wrap img {
+    display: block;
+    border-radius: 12px;
+}
+
+.hero-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.hero-image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: conic-gradient(from 0deg, transparent 0 300deg, #ffffff 300deg 330deg, transparent 330deg 360deg);
+    -webkit-mask: radial-gradient(circle, transparent calc(100% - 3px), #000 calc(100% - 3px));
+    mask: radial-gradient(circle, transparent calc(100% - 3px), #000 calc(100% - 3px));
+    animation: spinRing 3.5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes spinRing {
+    to {
+        transform: rotate(1turn);
     }
 }
