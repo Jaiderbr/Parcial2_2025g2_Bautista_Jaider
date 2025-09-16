@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - CoderHub.run</title>
+    <title>CoderHub.run</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages/contact/contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
 </head>
 
+
+
+
+
 <body>
-
-
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -39,10 +45,10 @@
 
 
     <main class="container my-5">
-        <h1 class="text-center mb-4">Contáctanos</h1>
+        <h1 class="text-center mb-4" data-aos="fade-up">Contáctanos</h1>
 
         <div class="row g-4 align-items-stretch">
-            <div class="col-md-6 d-flex">
+            <div class="col-md-6 d-flex form-col" data-aos="fade-right" data-aos-delay="100">
                 <form class="needs-validation w-100 d-flex flex-column justify-content-between" novalidate>
                     <div>
                         <div class="mb-3">
@@ -74,18 +80,20 @@
                 </form>
             </div>
 
-            <div class="col-md-6 d-flex">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.263688682497!2d-75.6139855!3d1.6171795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2578b7c31c6c3f%3A0x5c63f4fa4d5adf61!2sFlorencia%2C%20Caquet%C3%A1!5e0!3m2!1ses!2sco!4v1694350400000"
-                    width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy">
-                </iframe>
+            <div class="col-md-6 d-flex map-col" data-aos="fade-left" data-aos-delay="200">
+                <div class="map-wrap w-100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.263688682497!2d-75.6139855!3d1.6171795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2578b7c31c6c3f%3A0x5c63f4fa4d5adf61!2sFlorencia%2C%20Caquet%C3%A1!5e0!3m2!1ses!2sco!4v1694350400000"
+                        width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy"
+                        aria-label="Mapa de ubicación de CoderHub.run en Florencia, Caquetá">
+                    </iframe>
+                </div>
             </div>
         </div>
     </main>
 
-
-
-    <footer class="text-white text-center text-lg-start bg-dark mt-5">
+    <footer class="text-white text-center text-lg-start bg-dark elevated-footer" data-aos="fade-up"
+        data-aos-delay="300">
         <div class="container p-4">
             <div class="row mt-4">
 
@@ -126,7 +134,6 @@
                     </ul>
                 </div>
 
-
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-4">Horario de atención</h5>
                     <table class="table text-center text-white">
@@ -158,11 +165,18 @@
         </div>
     </footer>
 
-    <script src="../js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 
 </body>
 

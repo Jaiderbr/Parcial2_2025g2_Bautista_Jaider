@@ -8,10 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/pages/index/index.css">
 
 </head>
 
 <body>
+
     <div id="splash">
         <h1 id="splash-text">
             <span id="splash-part1"></span><span id="splash-part2"></span>
@@ -38,15 +40,27 @@
         </nav>
     </header>
 
-
-    <section class="bg-light text-dark text-center d-flex align-items-center" style="height: 90vh;">
+    <section class="hero-index text-center" id="index-body">
         <div class="container">
-            <h1 class="display-3 fw-bold">Bienvenido a <span class="text-primary">CoderHub.run</span></h1>
-            <p class="lead mt-3">Transformamos tus ideas en soluciones web profesionales.</p>
-            <a href="./html/contact.html" class="btn btn-primary btn-lg mt-4">Contáctanos</a>
+            <div class="hero-panel mx-auto" style="max-width:1100px;">
+                <div class="row align-items-center">
+                    <div class="col-md-7 text-md-start text-center">
+                        <h1 class="hero-title mb-3">Diseñamos y desarrollamos tu presencia digital</h1>
+                        <p class="hero-sub lead">Soluciones web modernas, desempeño escalable y soporte que acompaña tu
+                            crecimiento.</p>
+                        <div id="index-cta">
+                            <a href="./html/about.html#conocenos" class="btn btn-cta btn-lg me-3">Conócenos</a>
+                            <a href="./html/contact.html" class="btn btn-outline-light btn-lg">Contáctanos</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 img-col text-end">
+                        <img src="./img/web.jpg" alt="Desarrollo web" class="img-fluid rounded-3 shadow-lg"
+                            style="max-width:420px;">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
 
 
     <script src="./js/scripts.js"></script>

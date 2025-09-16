@@ -155,6 +155,76 @@
                 offset: 100
             });
         }
+
+        // Mark current nav item based on pathname and apply custom navbar class
+        try {
+            const nav = document.querySelector('nav.navbar');
+            if (nav) nav.classList.add('navbar-custom');
+
+            const links = document.querySelectorAll('nav.navbar .nav-link');
+            const current = window.location.pathname.split('/').pop();
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href) return;
+                const hrefFile = href.split('/').pop();
+                if (hrefFile === current || (current === '' && hrefFile === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        } catch (err) {
+            console.warn('Error setting active nav item', err);
+        }
+
+        try {
+            const teamCarouselEl = document.getElementById('teamCarousel');
+            if (teamCarouselEl && typeof bootstrap !== 'undefined') {
+                // If already initialized, this will re-initialize safely
+                new bootstrap.Carousel(teamCarouselEl, { interval: 4500, ride: 'carousel' });
+                console.log('teamCarousel explicitly initialized');
+            }
+        } catch (e) {
+            console.warn('Could not init teamCarousel', e);
+        }
+        try {
+            const teamCarouselEl = document.getElementById('teamCarousel');
+            if (teamCarouselEl && typeof bootstrap !== 'undefined') {
+                teamCarouselEl.addEventListener('slide.bs.carousel', function (ev) {
+                    const from = ev.from;
+                    const to = ev.to;
+                    const items = teamCarouselEl.querySelectorAll('.carousel-item');
+                    const outgoing = items[from] && items[from].querySelector('.team-card');
+                    const incoming = items[to] && items[to].querySelector('.team-card');
+
+                    const totalItems = items.length;
+                    let goingRight = (to > from) || (from === totalItems - 1 && to === 0);
+                    if (from === 0 && to === totalItems - 1) goingRight = false;
+
+                    if (outgoing) {
+                        outgoing.classList.remove('card-enter', 'card-enter-left', 'card-enter-right');
+                        outgoing.classList.add(goingRight ? 'card-exit-right' : 'card-exit-left');
+                    }
+                    if (incoming) {
+                        incoming.classList.remove('card-exit-left', 'card-exit-right');
+                        setTimeout(() => {
+                            incoming.classList.add(goingRight ? 'card-enter-right' : 'card-enter-left');
+                        }, 280);
+                    }
+                });
+
+                teamCarouselEl.addEventListener('slid.bs.carousel', function (ev) {
+                    const items = teamCarouselEl.querySelectorAll('.carousel-item');
+                    items.forEach(it => {
+                        const card = it.querySelector('.team-card');
+                        if (card) {
+                            card.classList.remove('card-exit-left', 'card-exit-right',
+                                'card-enter-left', 'card-enter-right');
+                        }
+                    });
+                });
+            }
+        } catch (err) {
+            console.warn('Carousel animation hooks not available', err);
+        }
     });
 })()
 
