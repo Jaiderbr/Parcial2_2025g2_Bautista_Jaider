@@ -10,6 +10,7 @@
     --color-dark: #000;
     --shadow-default: 0 8px 25px rgba(0, 0, 0, 0.15);
     --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.25);
+    --contact-accent: #007BFF;
 }
 
 body {
@@ -334,4 +335,10 @@ h2 {
 
 .team-card:hover {
     box-shadow: 0 12px 28px rgba(255, 255, 255, 0.35), 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+footer h5 {
+    color: var(--contact-text);
+    border-bottom: 2px solid var(--contact-accent);
+    padding-bottom: 0.5rem;
 }
