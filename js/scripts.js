@@ -116,6 +116,12 @@
                     setTimeout(removeWatermark, 500);
                     setTimeout(removeWatermark, 1500);
                     setTimeout(removeWatermark, 3000);
+
+                    // Animate visible elements immediately (first section on mobile)
+                    if (typeof AOS !== 'undefined') {
+                        animateVisibleAOS();
+                        AOS.refreshHard && AOS.refreshHard();
+                    }
                 },
 
                 afterResize: function (width, height) {
@@ -124,6 +130,10 @@
 
                 afterResponsive: function (isResponsive) {
                     console.log('Modo responsive:', isResponsive);
+                    if (isResponsive && typeof AOS !== 'undefined') {
+                        animateVisibleAOS();
+                        AOS.refresh && AOS.refresh();
+                    }
                 }
             });
 
@@ -156,7 +166,24 @@
             });
         }
 
-        // Mark current nav item based on pathname and apply custom navbar class
+        // Helper: mark currently visible [data-aos] as animated
+        function animateVisibleAOS() {
+            const els = document.querySelectorAll('[data-aos]');
+            const vh = window.innerHeight || document.documentElement.clientHeight;
+            els.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                // If at least 20% of the element is visible
+                const visible = rect.top < vh * 0.9 && rect.bottom > vh * 0.1;
+                if (visible) el.classList.add('aos-animate');
+            });
+        }
+
+        // Run after DOM ready
+        animateVisibleAOS();
+        window.addEventListener('resize', () => {
+            animateVisibleAOS();
+        });
+
         try {
             const nav = document.querySelector('nav.navbar');
             if (nav) nav.classList.add('navbar-custom');
@@ -178,7 +205,6 @@
         try {
             const teamCarouselEl = document.getElementById('teamCarousel');
             if (teamCarouselEl && typeof bootstrap !== 'undefined') {
-                // If already initialized, this will re-initialize safely
                 new bootstrap.Carousel(teamCarouselEl, { interval: 4500, ride: 'carousel' });
                 console.log('teamCarousel explicitly initialized');
             }
