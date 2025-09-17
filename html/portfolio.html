@@ -8,16 +8,11 @@
     <link rel="icon" type="image/png" href="../img/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/pages/contact/contact.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../css/pages/portfolio/portfolio.css">
 </head>
-
-
-
-
 
 <body>
     <header>
@@ -34,7 +29,8 @@
                         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="../html/about.html">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="../html/services.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../html/portfolio.html">Portafolio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../html/portfolio.html">Portafolio</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="../html/contact.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -42,56 +38,91 @@
         </nav>
     </header>
 
-
-
-
-    <main class="container my-5">
-        <h1 class="text-center mb-4" data-aos="fade-up">Contáctanos</h1>
-
-        <div class="row g-4 align-items-stretch">
-            <div class="col-md-6 d-flex form-col" data-aos="fade-right" data-aos-delay="100">
-                <form class="needs-validation w-100 d-flex flex-column justify-content-between" novalidate>
-                    <div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" required>
-                            <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="email" required>
-                            <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Asunto</label>
-                            <input type="text" class="form-control" id="subject" required>
-                            <div class="invalid-feedback">Por favor ingresa el asunto.</div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                            <div class="invalid-feedback">Por favor escribe un mensaje.</div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary mt-3">Enviar</button>
-                </form>
+    <section id="portfolio-grid" class="portfolio-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <p class="section-subtitle">Cada proyecto cuenta una historia de innovación y éxito</p>
+                </div>
             </div>
 
-            <div class="col-md-6 d-flex map-col" data-aos="fade-left" data-aos-delay="200">
-                <div class="map-wrap w-100">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.263688682497!2d-75.6139855!3d1.6171795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2578b7c31c6c3f%3A0x5c63f4fa4d5adf61!2sFlorencia%2C%20Caquet%C3%A1!5e0!3m2!1ses!2sco!4v1694350400000"
-                        width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy"
-                        aria-label="Mapa de ubicación de CoderHub.run en Florencia, Caquetá">
-                    </iframe>
+            <div class="row g-4 justify-content-center">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/1.jpg" alt="E-commerce Platform">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Platform</h5>
+                            <p class="card-text">Plataforma de comercio electrónico completa con sistema de pagos
+                                integrado y gestión de inventario.</p>
+                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/2.jpg" alt="Mobile Banking App">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile Banking App</h5>
+                            <p class="card-text">Aplicación móvil de banca con funciones de transferencias, pagos y
+                                gestión de cuentas.</p>
+                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/3.webp" alt="Business Dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Dashboard</h5>
+                            <p class="card-text">Dashboard empresarial con análisis de datos en tiempo real y reportes
+                                automatizados.</p>
+                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/2.jpg" alt="Support System">
+                        <div class="card-body">
+                            <h5 class="card-title">Support System</h5>
+                            <p class="card-text">Sistema de soporte técnico con chat en vivo, tickets y base de
+                                conocimientos.</p>
+                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/3.webp" alt="Landing Page">
+                        <div class="card-body">
+                            <h5 class="card-title">Landing Page</h5>
+                            <p class="card-text">Página de aterrizaje optimizada para conversiones con diseño responsive
+                                y SEO.</p>
+                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/1.jpg" alt="API Integration">
+                        <div class="card-body">
+                            <h5 class="card-title">API Integration</h5>
+                            <p class="card-text">Integración de APIs de terceros para automatización de procesos
+                                empresariales.</p>
+                            <a href="#" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
 
     <footer class="text-white text-center text-lg-start bg-dark elevated-footer" data-aos="fade-up"
         data-aos-delay="300">
