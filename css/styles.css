@@ -11,10 +11,10 @@ header {
     top: 0;
     z-index: 1020;
     width: 100%;
-    background: rgba(33, 37, 41, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(15, 20, 25, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 217, 255, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -25,9 +25,9 @@ header .navbar {
 }
 
 header.scrolled {
-    background: rgba(33, 37, 41, 0.98) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(15, 20, 25, 0.98) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 217, 255, 0.15);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.3);
 }
 
 header.scrolled .navbar {
@@ -50,7 +50,8 @@ header.scrolled .navbar {
     padding: .5rem .9rem;
     border-radius: 30px;
     transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: #ffffff !important;
+    font-weight: 500;
 }
 
 .navbar .nav-link:hover {
@@ -60,11 +61,12 @@ header.scrolled .navbar {
 }
 
 .navbar .nav-link.active {
-    background: linear-gradient(180deg, #0b0f10, #191c1d);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), inset 0 0 8px rgba(255, 255, 255, 0.02);
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 217, 255, 0.05));
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.05);
     position: relative;
     padding-left: 1.15rem;
+    backdrop-filter: blur(10px);
 }
 
 .navbar .nav-link.active::after {
@@ -75,7 +77,8 @@ header.scrolled .navbar {
     bottom: 8px;
     width: 5px;
     border-radius: 4px;
-    background: linear-gradient(180deg, #d6d30e, #0314b4);
+    background: linear-gradient(180deg, #00d9ff, #ff6b35);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
 }
 
 @media (max-width: 991px) {
@@ -99,6 +102,49 @@ header.scrolled .navbar {
 
 body {
     padding-top: 0 !important;
+    color: #ffffff !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+p, span, div, a {
+    color: #ffffff !important;
+}
+
+.card, .card * {
+    color: #1a202c !important;
+}
+
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+    color: #1a202c !important;
+}
+
+.card p, .card span, .card div {
+    color: #4a5568 !important;
+}
+
+.card a {
+    color: #0066cc !important;
+}
+
+.card a:hover {
+    color: #004499 !important;
+}
+
+.btn, .btn * {
+    color: #ffffff !important;
+}
+
+.btn-outline-light {
+    color: #ffffff !important;
+    border-color: #00d9ff !important;
+}
+
+.btn-outline-light:hover {
+    color: #ffffff !important;
+    background-color: rgba(0, 217, 255, 0.1) !important;
 }
 
 #fullpage {
@@ -262,27 +308,30 @@ main.container {
 }
 
 #index-body {
-    background-color: #2C2C2C;
-    color: #FFFFFF;
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #243447 100%);
+    color: #ffffff;
 }
 
 #index-section {
-    background-color: #6C6C6C !important;
-    color: #FFFFFF !important;
+    background: linear-gradient(135deg, #1a2332 0%, #243447 100%) !important;
+    color: #ffffff !important;
 }
 
 #index-text-primary {
-    color: #275f9b !important;
+    color: #00d9ff !important;
 }
 
 #index-btn-primary {
-    background-color: #6C6C6C;
-    border-color: #6C6C6C;
+    background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+    border-color: #00d9ff;
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
 }
 
 #index-btn-primary:hover {
-    background-color: #2C2C2C;
-    border-color: #2C2C2C;
+    background: linear-gradient(135deg, #00a8cc 0%, #0077aa 100%);
+    border-color: #00a8cc;
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4);
+    transform: translateY(-2px);
 }
 
 ::-webkit-scrollbar {
@@ -304,9 +353,12 @@ main.container {
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.45);
+    box-shadow: 
+        0 -20px 40px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 217, 255, 0.1);
     position: relative;
-    background-color: #2C2C2C !important;
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%) !important;
+    border-top: 2px solid rgba(0, 217, 255, 0.3);
 }
 
 @media (max-width: 576px) {

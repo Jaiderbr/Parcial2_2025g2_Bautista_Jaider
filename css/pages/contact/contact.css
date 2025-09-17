@@ -1,21 +1,24 @@
 :root {
-    --contact-bg: #2C2C2C;
-    --contact-text: #FFFFFF;
-    --contact-secondary: #6C6C6C;
-    --contact-accent: #007BFF;
-    --contact-light: #F8F9FA;
-    --contact-border: #495057;
-    --contact-gradient-primary: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
-    --contact-gradient-secondary: linear-gradient(135deg, #0056b3 0%, #6C6C6C 100%);
-    --contact-shadow-light: rgba(0, 123, 255, 0.15);
+    --contact-bg: #0f1419;
+    --contact-bg-secondary: #1a2332;
+    --contact-bg-tertiary: #243447;
+    --contact-text: #ffffff;
+    --contact-text-secondary: #b8c5d1;
+    --contact-accent: #00d9ff;
+    --contact-accent-secondary: #ff6b35;
+    --contact-light: #f8fafc;
+    --contact-border: #374151;
+    --contact-gradient-primary: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+    --contact-gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #dd4814 100%);
+    --contact-shadow-light: rgba(0, 217, 255, 0.15);
     --contact-shadow-dark: rgba(0, 0, 0, 0.3);
-    --contact-yellow: #FFC107;
-    --contact-blue: #007BFF;
+    --contact-yellow: #ffd700;
+    --contact-blue: #00d9ff;
 }
 
 
 body {
-    background: linear-gradient(135deg, var(--contact-bg) 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--contact-bg) 0%, var(--contact-bg-secondary) 50%, var(--contact-bg-tertiary) 100%);
     color: var(--contact-text);
     overflow-x: hidden;
     position: relative;
@@ -29,8 +32,9 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 86, 179, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
     pointer-events: none;
     z-index: -1;
     animation: backgroundPulse 8s ease-in-out infinite;

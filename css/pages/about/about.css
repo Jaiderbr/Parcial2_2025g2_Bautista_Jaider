@@ -1,21 +1,52 @@
 :root {
-    --about-bg: #2C2C2C;
-    --about-text: #FFFFFF;
-    --about-secondary: #6C6C6C;
-    --about-accent: #6C6C6C;
-    --about-cta: #A0A0A0;
-    --about-light: #F8F9FA;
-    --color-heading: #2c3e50;
-    --color-body: #5a6c7d;
-    --color-dark: #000;
-    --shadow-default: 0 8px 25px rgba(0, 0, 0, 0.15);
-    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.25);
-    --contact-accent: #007BFF;
+    --about-bg: #0f1419;
+    --about-bg-secondary: #1a2332;
+    --about-bg-tertiary: #243447;
+    --about-text: #ffffff;
+    --about-text-secondary: #b8c5d1;
+    --about-accent: #00d9ff;
+    --about-accent-secondary: #ff6b35;
+    --about-cta: #00d9ff;
+    --about-light: #f8fafc;
+    --color-heading: #ffffff;
+    --color-body: #b8c5d1;
+    --color-dark: #0f1419;
+    --shadow-default: 0 10px 40px rgba(0, 217, 255, 0.15);
+    --shadow-hover: 0 20px 60px rgba(0, 217, 255, 0.25);
+    --about-gradient: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+    --about-gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #dd4814 100%);
 }
 
 body {
-    background-color: var(--about-bg);
+    background: linear-gradient(135deg, var(--about-bg) 0%, var(--about-bg-secondary) 50%, var(--about-bg-tertiary) 100%);
     color: var(--about-text);
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 25% 75%, rgba(0, 217, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 75% 25%, rgba(255, 107, 53, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.02) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: backgroundPulse 10s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 h1,
@@ -72,6 +103,8 @@ h2 {
 .timeline {
     position: relative;
     padding: 2rem 0;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .timeline::before {
@@ -81,8 +114,9 @@ h2 {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, var(--contact-accent), var(--about-accent));
+    background: var(--about-gradient);
     border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
 }
 
 .timeline-item {
@@ -99,16 +133,17 @@ h2 {
     left: 0;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--contact-accent), var(--about-accent));
+    background: var(--about-gradient);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ffffff !important;
     font-weight: 700;
     font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
     z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-content {
@@ -116,27 +151,39 @@ h2 {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid var(--contact-accent);
+    border-left: 4px solid var(--about-accent);
     flex: 1;
     transition: all 0.3s ease;
+    max-width: 300px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 217, 255, 0.1);
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.2);
+    border-left-color: var(--about-accent-secondary);
 }
 
 .timeline-content h5 {
-    color: var(--about-bg);
+    color: #1a202c !important;
     font-weight: 700;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
 .timeline-content p {
-    color: var(--color-body);
+    color: #4a5568 !important;
     margin: 0;
     line-height: 1.6;
+}
+
+.history-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 1rem;
 }
 
 .philosophy-card {
@@ -210,11 +257,11 @@ h2 {
     font-weight: 700;
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
-    color: var(--color-heading);
+    color: #1a202c !important;
 }
 
 .philosophy-card .card-text {
-    color: var(--color-body);
+    color: #4a5568 !important;
     line-height: 1.5;
     font-size: 0.95rem;
 }
@@ -275,7 +322,8 @@ h2 {
 
     .timeline {
         padding: 1rem;
-        margin-top: 2rem;
+        margin: 2rem auto 0;
+        max-width: 400px;
     }
 
     .timeline::before {
@@ -287,6 +335,11 @@ h2 {
         margin-bottom: 2rem;
     }
 
+    .history-visual {
+        min-height: auto;
+        padding: 0.5rem;
+    }
+
     .timeline-date {
         width: 40px;
         height: 40px;
@@ -296,6 +349,7 @@ h2 {
     .timeline-content {
         padding: 1rem;
         margin-right: 0.5rem;
+        max-width: 280px;
     }
 
     .philosophy-section {
@@ -391,7 +445,15 @@ h2 {
 
 .card {
     background-color: var(--about-light);
-    color: var(--color-dark);
+    color: #1a202c !important;
+}
+
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .card .card-title {
+    color: #1a202c !important;
+}
+
+.card p, .card span, .card div, .card .card-text {
+    color: #4a5568 !important;
 }
 
 .team-card {
@@ -404,9 +466,17 @@ h2 {
     min-height: 460px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: var(--about-light);
-    color: var(--color-dark);
+    color: #1a202c !important;
     will-change: transform, opacity;
     backface-visibility: hidden;
+}
+
+.team-card h5, .team-card .card-title {
+    color: #1a202c !important;
+}
+
+.team-card p, .team-card .card-text, .team-card .list-group-item {
+    color: #4a5568 !important;
 }
 
 .team-card:hover {
