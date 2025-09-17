@@ -61,12 +61,67 @@ body {
     width: 100%;
     max-width: 420px;
     height: auto;
-    background: var(--accent);
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 15px;
     opacity: 0;
     animation: slideInRight 0.8s ease-out forwards 0.4s;
     will-change: transform, opacity;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+    filter: brightness(1.05) contrast(1.1);
+}
+
+.hero-panel .img-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-panel .img-col::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    padding: 4px;
+    background: linear-gradient(45deg, #ffffff, #e9ecef, #6c757d, #343a40, #000000, #ffffff);
+    background-size: 400% 400%;
+    border-radius: 20px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    animation: borderAnimation 3s ease-in-out infinite, borderMove 6s linear infinite;
+    z-index: 1;
+}
+
+@keyframes borderAnimation {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-panel .img-fluid:hover {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(1.1) contrast(1.15) saturate(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-panel .col-md-5 {
@@ -106,6 +161,11 @@ body {
     .hero-panel .img-fluid {
         max-width: 70%;
     }
+    
+    .hero-panel .img-col::before {
+        inset: -3px;
+        padding: 3px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -116,6 +176,11 @@ body {
 
     .hero-panel .col-md-5 {
         padding-right: 0.75rem;
+    }
+    
+    .hero-panel .img-col::before {
+        inset: -2px;
+        padding: 2px;
     }
 }
 
@@ -165,9 +230,10 @@ body {
     #index-cta {
         display: flex;
         justify-content: center;
-        gap: 0.75rem;
-        margin-top: 1rem;
-        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: nowrap;
+        align-items: center;
     }
 
     .hero-panel {
@@ -229,6 +295,10 @@ body {
 
 #index-cta {
     margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 #index-cta .btn {
@@ -236,9 +306,16 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 50px;
-    padding: 0.6rem 1.15rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 40px;
     box-sizing: border-box;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 140px;
+    margin-right: 0 !important;
 }
 
 #index-cta .btn.btn-outline-light {
@@ -247,20 +324,70 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-@media (max-width: 480px) {
+#index-cta .btn.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 769px) {
+    .text-md-start #index-cta {
+        justify-content: flex-start;
+    }
+    
+    .text-center #index-cta {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 769px) {
+    #index-cta {
+        gap: 3rem;
+        justify-content: center;
+    }
+    
     #index-cta .btn {
-        min-height: 40px;
-        padding: 0.5rem 1rem;
+        min-width: 150px;
+        padding: 0.75rem 1.8rem;
+    }
+    
+    #index-cta .btn.me-3 {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #index-cta {
+        justify-content: center !important;
+        gap: 0.8rem;
+    }
+    
+    #index-cta .btn {
+        min-width: 130px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #index-cta {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+        align-items: center;
+    }
+    
+    #index-cta .btn {
+        min-height: 48px;
+        padding: 0.7rem 1.5rem;
+        min-width: 160px;
+        width: 100%;
+        max-width: 280px;
+        font-size: 1rem;
     }
 
     #index-cta .btn.btn-cta {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    #index-cta .btn {
-        flex: 1 1 100%;
-        max-width: 320px;
+        padding: 0.7rem 1.5rem;
     }
 }
 
@@ -309,41 +436,36 @@ body {
     animation: slideInRight 0.8s ease-out forwards 0.4s;
 }
 
-.hero-image-wrap {
-    position: relative;
-    display: inline-block;
-    padding: 0;
-    border-radius: 0;
-}
-
-.hero-image-wrap img {
-    display: block;
-    border-radius: 12px;
-}
-
-.hero-image-wrap::before {
+.hero-panel .img-col::after {
     content: '';
     position: absolute;
-    inset: 0;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    pointer-events: none;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(45deg, #6c757d, #ffffff, #343a40);
+    border-radius: 50%;
+    top: 20%;
+    right: 10%;
+    opacity: 0.7;
+    animation: floatParticle 4s ease-in-out infinite;
+    z-index: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero-image-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 12px;
-    background: conic-gradient(from 0deg, transparent 0 300deg, #ffffff 300deg 330deg, transparent 330deg 360deg);
-    -webkit-mask: radial-gradient(circle, transparent calc(100% - 3px), #000 calc(100% - 3px));
-    mask: radial-gradient(circle, transparent calc(100% - 3px), #000 calc(100% - 3px));
-    animation: spinRing 3.5s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes spinRing {
-    to {
-        transform: rotate(1turn);
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-10px) scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) scale(0.8);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translateY(-10px) scale(1.1);
+        opacity: 0.8;
     }
 }

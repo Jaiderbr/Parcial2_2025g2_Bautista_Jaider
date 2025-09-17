@@ -18,8 +18,125 @@ body {
     color: var(--about-text);
 }
 
+h1,
 h2 {
     color: var(--about-text);
+}
+
+.history-section {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.history-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--about-text);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.history-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--contact-accent), var(--about-accent));
+    border-radius: 2px;
+}
+
+.history-text {
+    color: var(--about-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.history-text .lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--about-text);
+    margin-bottom: 1.5rem;
+}
+
+.history-text .highlight {
+    color: var(--contact-accent);
+    font-weight: 700;
+    background: rgba(0, 123, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--contact-accent), var(--about-accent));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--contact-accent), var(--about-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--contact-accent);
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content h5 {
+    color: var(--about-bg);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    color: var(--color-body);
+    margin: 0;
+    line-height: 1.6;
 }
 
 .philosophy-card {
@@ -59,16 +176,17 @@ h2 {
 }
 
 .philosophy-card .card-body {
-    padding: 2.5rem 1.5rem;
+    padding: 1.8rem 1.2rem;
     position: relative;
     z-index: 2;
 }
 
 .philosophy-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     display: inline-block;
     transition: all 0.4s ease;
+    color: var(--contact-accent);
 }
 
 .philosophy-card:hover .philosophy-icon {
@@ -89,16 +207,16 @@ h2 {
 }
 
 .philosophy-card .card-title {
-    font-weight: 600;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
     color: var(--color-heading);
 }
 
 .philosophy-card .card-text {
     color: var(--color-body);
-    line-height: 1.6;
-    font-size: 1rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 .philosophy-card:nth-child(1) {
@@ -131,16 +249,143 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .history-section {
+        padding: 2rem 1rem;
+    }
+
+    .history-content {
+        padding: 0 1rem;
+    }
+
+    .history-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .history-text {
+        font-size: 1rem;
+        padding: 0;
+        text-align: justify;
+    }
+
+    .history-text p {
+        margin-bottom: 1.2rem;
+        text-align: justify;
+    }
+
+    .timeline {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-date {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+        margin-right: 0.5rem;
+    }
+
     .philosophy-section {
         padding: 3rem 1rem;
     }
 
     .philosophy-card .card-body {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .philosophy-icon {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .history-section {
+        padding: 2rem 0.5rem;
+    }
+
+    .history-content {
+        padding: 0 0.5rem;
+    }
+
+    .history-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .history-text {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .history-text .lead {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline {
+        padding: 0.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 0.8rem;
+        margin-right: 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    .timeline-content h5 {
+        font-size: 1rem;
+    }
+
+    .philosophy-section {
+        padding: 2rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-section {
+        padding: 1.5rem 0.3rem;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .history-content {
+        padding: 0;
+    }
+
+    .history-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .history-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .history-text p {
+        margin-bottom: 1rem;
+        padding: 0 0.2rem;
+        text-align: justify;
     }
 }
 
@@ -337,8 +582,35 @@ h2 {
     box-shadow: 0 12px 28px rgba(255, 255, 255, 0.35), 0 0 25px rgba(255, 255, 255, 0.1);
 }
 
+
+footer.bg-dark {
+    background-color: var(--about-bg) !important;
+    color: var(--about-text);
+}
+
+footer .text-white {
+    color: var(--about-text) !important;
+}
+
 footer h5 {
-    color: var(--contact-text);
+    color: var(--about-text);
     border-bottom: 2px solid var(--contact-accent);
     padding-bottom: 0.5rem;
+}
+
+footer .table {
+    color: var(--about-text);
+}
+
+footer .table td {
+    border-color: var(--about-secondary);
+}
+
+footer a.text-white {
+    color: var(--about-text) !important;
+    transition: color 0.3s ease;
+}
+
+footer a.text-white:hover {
+    color: var(--contact-accent) !important;
 }
